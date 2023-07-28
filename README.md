@@ -25,10 +25,10 @@ Your quote shows all the project you have quoted and its status. If the project 
 ##### Motivation
 The idea of this app originates when I working as a quantity surveyor where I have to invite quotations from contractors and make a cost comparison in an excel for approval. So I am thinking is this process can be automated without having to input those info manually. That’s why this idea come into my mind.
 
-####Future Development
+#### Future Development
 In future, I am thinking to expand this web app to carry complicated cost comparison, particularly involving hundreds of items in a project and ask the contractors to input the price into it. Then, generate an excel like cost comparison, showing all the price and amount quoted by contractors. When clicking on “confirm” button, the system will generate a standardized contract to be endorsed by both parties. Besides, I wish to add features that enable two ways communications like chatbox or forum.
 
-####Struggles and Issues encountered
+#### Struggles and Issues encountered
 I am not from computer science background. Hence, I am having difficulties in translating my idea into codes. I had gone through a lot of the video in Youtube, stackoverflow and other platform to look for solutions.
 
 
