@@ -1,0 +1,43 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    View
+{% endblock %}
+
+{% block main %}
+<table class = "table">
+  <thead>
+      <tr>
+          <th scope = "col">Timestamp</th>
+          <th scope = "col">User</th>
+          <th scope = "col">Quantity</th>
+          <th scope = "col">Unit</th>
+          <th scope = "col">Price</th>
+          <th scope = "col">Total</th>
+          <th scope = "col">Remarks</th>
+          <th scope = "col">Confirm</th>
+      </tr>
+  </thead>
+  <tbody>
+      {% for row in view %}
+      <tr>
+          <td scope = "row">{{row["timestamp_quote"]}}</td>
+          <td scope = "row">{{row["quote_user"]}}</td>
+          <td scope = "row">{{row["quantity"]}}</td>
+          <td scope = "row">{{row["unit"]}}</td>
+          <td scope = "row">{{row["price"]}}</td>
+          <td scope = "row">{{row["total"]}}</td>
+          <td scope = "row">{{row["remarks_quote"]}}</td>
+          <td scope = "row"> <a href="/confirm-post/{{row["quote_id"]}}"><button class="btn btn-primary" type="submit">Confrim</button></a></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+
+  <div class = "container">
+    <div class = "center">
+    <a href="/">
+        <button class="btn btn-primary" type="submit">Back</button>
+      </a>
+    </div>
+{% endblock %}

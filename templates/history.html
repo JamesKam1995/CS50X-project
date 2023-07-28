@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+  <table class = "table">
+    <thead>
+        <tr>
+            <th scope = "col">Title</th>
+            <th scope = "col">Location</th>
+            <th scope = "col">Commencement date</th>
+            <th scope = "col">Completion Date</th>
+            <th scope = "col">Status</th>
+            <th scope = "col">Awarded to</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in history %}
+        <tr>
+            <td scope = "row">{{row["title"]}}</td>
+            <td scope = "row">{{row["location"]}}</td>
+            <td scope = "row">{{row["commencement_date"]}}</td>
+            <td scope = "row">{{row["completion_date"]}}</td>
+            <td scope = "row">{{row["status"]}}</td>
+            <td scope = "row"><a href = "/user/{{row["awarded_userid"]}}">{{row["awarded_username"]}}</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+    <div class = "container">
+        <div class = "center">
+        <a href="/">
+            <button class="btn btn-primary" type="submit">Back</button>
+          </a>
+        </div>
+    </div>
+
+    {% endblock %}

@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+<div class = "form">
+  {% for row in post_quote %}
+    <form action="/quote-post/{{row["project_id"]}}" method="post">
+        <h1>Quote</h1>
+        <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">Item</th>
+                <th scope="col">Project Details</th>
+                <th scope="col">Quote</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <th scope="row">Project title</th>
+                <td scope = "row">{{row["title"]}}</td>
+                <td scope = "row">{{row["title"]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Quantity</th>
+                <td scope = "row">{{row["quantity"]}}</td>
+                <td scope = "row">{{row["quantity"]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Unit</th>
+                <td scope = "row">{{row["unit"]}}</td>
+                <td scope = "row">{{row["unit"]}}</td>
+              </tr>
+              <tr>
+                <th scope="row">Price</th>
+                <td scope = "row"> - </td>
+                <td colspan="2"><input class="form-control mx-auto w-auto" id="price" name="price" placeholder="Price eg. 1"type="text" required></td>
+              </tr>
+              <tr>
+                <th scope="row">Remarks (optional)</th>
+                <td scope = "row">{{row["remarks"]}}</td>
+                <td colspan="2"><textarea name="remarks">Enter remarks here...</textarea>
+                </td>
+              </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+          <button class="btn btn-primary" type="submit">Quote</button>
+    </form>
+    <br>
+    <a href="/">
+      <button class="btn btn-primary" type="submit">Back</button>
+    </a>
+    </div>
+
+{% endblock %}
